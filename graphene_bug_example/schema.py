@@ -14,7 +14,4 @@ class Example(DjangoObjectType):
 class Query(graphene.ObjectType):
     examples = graphene.List(Example)
 
-    def resolve_users(self, info):
-        return UserModel.objects.all()
-
 schema = graphene.Schema(query=Query)
